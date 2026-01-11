@@ -11,7 +11,7 @@ async def get_ai_response(text: str, is_premium: bool = False) -> str:
         # Premium users get GPT-4o, Standard gets GPT-3.5-Turbo
         model = "gpt-4o" if is_premium else "gpt-3.5-turbo"
         
-        system_prompt = "You are a helpful assistant." 
+        system_prompt = "You are a helpful assistant. You must answer in the Uzbek language if the user speaks Uzbek, and ensure your Uzbek is natural and grammatically correct. If the user speaks another language, reply in that language." 
         if is_premium:
             system_prompt += " You give detailed, high-quality answers."
         else:
